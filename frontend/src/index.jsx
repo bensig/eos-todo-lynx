@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import EOS from 'eosjs'
+//import EOS from 'eosjs'
 import update from 'react-addons-update';
 
 const EOS_CONFIG = {
-  contractName: "todo", // Contract name
-  contractSender: "todo", // User executing the contract (should be paired with private key)
-  clientConfig: {
-    keyProvider: [''], // Your private key
-    httpEndpoint: 'http://127.0.0.1:8888' // EOS http endpoint
+  contractName: "benbenbenben", // Contract name
+//  contractSender: "todo", // User executing the contract (should be paired with private key)
+//  clientConfig: {
+//    keyProvider: [''], // Your private key
+//    httpEndpoint: 'http://127.0.0.1:8888' // EOS http endpoint
   }
 }
 
@@ -45,7 +45,7 @@ class TodoList extends React.Component {
       loading: false,
       todos: []
     }
-    this.eosClient = EOS.Localnet(EOS_CONFIG.clientConfig)
+//  this.eosClient = EOS.Localnet(EOS_CONFIG.clientConfig)
     this.loadTodos();
   }
 
