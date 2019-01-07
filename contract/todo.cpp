@@ -9,6 +9,7 @@ class todo_contract : public eosio::contract {
       {}
 
     // @abi action
+    [[eosio::action]]
     void create(account_name author, const uint32_t id, const std::string& description) {
       todos.emplace(author, [&](auto& new_todo) {
         new_todo.id  = id;
@@ -20,6 +21,7 @@ class todo_contract : public eosio::contract {
     }
 
     // @abi action
+    [[eosio::action]]
     void destroy(account_name author, const uint32_t id) {
       auto todo_lookup = todos.find(id);
       todos.erase(todo_lookup);
@@ -28,6 +30,7 @@ class todo_contract : public eosio::contract {
     }
 
     // @abi action
+    [[eosio::action]]
     void complete(account_name author, const uint32_t id) {
       auto todo_lookup = todos.find(id);
       eosio_assert(todo_lookup != todos.end(), "Todo does not exist");
