@@ -43,8 +43,8 @@ class todo_contract : public eosio::contract {
     }
 
   private:
-    // @abi table todos i64
-    struct todo {
+    // @abi table todo i64
+    struct [[eosio::table]] todo {
       uint64_t id;
       std::string description;
       uint64_t completed;
